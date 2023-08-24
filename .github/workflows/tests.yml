@@ -22,8 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyparaspace
-
+        pip install pytest pytest-cov
     - name: Test with pytest
       run: |
-        pip install pytest pytest-cov
-        pytest --cov
+        pytest testPyParaspace.py --cov
