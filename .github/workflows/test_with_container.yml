@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build Docker Container
+    - name: Checking the version on Rust,Clang and Cmake
       run: |
-        docker build -t mybuild .
-        docker run --rm -v $(pwd):/io mybuild publish --skip-existing --compatibility manylinux2014 -i python3.10
-        
+        clang --version
+        cargo --version
+        cmake --version
