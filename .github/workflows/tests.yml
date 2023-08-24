@@ -1,11 +1,11 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: PipTest
+run-name: ${{ github.actor }} is testing pyparaspace using pip install
 on: [push]
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.10', '3.11']
@@ -26,4 +26,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest pytest-cov
-        pytest testPyParaSpace.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+        pytest testPyParaspace.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
