@@ -11,12 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: Checking the version on Rust,Clang and Cmake
-      run: |
-        clang --version
-        cargo --version
-        cmake --version
     - name: Building Package
       run: |
         python -m venv env
@@ -27,10 +21,10 @@ jobs:
     - name: List all packages
       run: |
         pip list
-        pip install .
-        pip list
     - name: Run code
-      run: python testPyParaspace.py
+      run: | 
+        source env/bin/activate
+        python testPyParaspace.py
     - name: Testing the code
       run: |
         pytest testPyParaspace.py --cov
