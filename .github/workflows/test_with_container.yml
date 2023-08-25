@@ -1,5 +1,5 @@
-name: ContainerTest
-run-name: Testing using the available container
+name: Code Test
+run-name: Testing the repo with a test file
 on: [workflow_dispatch]
 jobs:
   test:
@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -18,14 +18,6 @@ jobs:
         pip install maturin
         pip install pytest pytest-cov 
         maturin develop
-    - name: List all packages
-      run: |
-        source env/bin/activate
-        pip list
-    - name: Run code
-      run: | 
-        source env/bin/activate
-        python testPyParaspace.py
     - name: Testing the code
       run: |
         source env/bin/activate
