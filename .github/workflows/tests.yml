@@ -1,5 +1,5 @@
-name: PipTest
-run-name: ${{ github.actor }} is testing pyparaspace using pip install
+name: Code Test of PyPi package pyparaspace
+run-name: Code Test of PyPi package pyparaspace
 on: [workflow_dispatch]
 jobs:
   test:
