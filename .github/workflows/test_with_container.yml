@@ -24,6 +24,11 @@ jobs:
         pip install maturin
         pip install pytest pytest-cov 
         maturin develop
+    - name: List all packages
+      run: |
+        pip list
+        pip install .
+        pip list
     - name: Run code
       run: python testPyParaspace.py
     - name: Testing the code
