@@ -1,4 +1,4 @@
-name: Code Test
+name: Code Test (local build)
 run-name: Code Test (local build)
 on: [workflow_dispatch]
 jobs:
