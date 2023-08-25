@@ -13,8 +13,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Building Package
       run: |
-        python -m venv env
-        source env/bin/activate
         pip install maturin
         pip install pytest pytest-cov 
         maturin develop
@@ -23,7 +21,6 @@ jobs:
         pip list
     - name: Run code
       run: | 
-        source env/bin/activate
         python testPyParaspace.py
     - name: Testing the code
       run: |
