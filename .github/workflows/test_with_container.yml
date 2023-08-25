@@ -1,5 +1,5 @@
 name: Code Test
-run-name: Testing the repo with a test file
+run-name: Code Test (local build)
 on: [workflow_dispatch]
 jobs:
   test:
